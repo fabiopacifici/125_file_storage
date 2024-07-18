@@ -91,7 +91,8 @@ class ProjectController extends Controller
             $image_path = Storage::put('uploads', $request->cover_image);
             $val_data['cover_image'] = $image_path;
 
-            if ($project->cover_image && !Str::start($project->cover_image, 'http')) {
+            if ($project->cover_image && !Str::startsWith($project->cover_image, 'http')) {
+
                 // not null and not startingn with http
                 Storage::delete($project->cover_image);
             }
@@ -114,7 +115,7 @@ class ProjectController extends Controller
     {
 
 
-        if ($project->cover_image && !Str::start($project->cover_image, 'http')) {
+        if ($project->cover_image && !Str::startsWith($project->cover_image, 'http')) {
             // not null and not startingn with http
             Storage::delete($project->cover_image);
         }
