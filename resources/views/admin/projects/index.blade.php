@@ -109,6 +109,10 @@
                 </tr>
                 @endforelse
 
+
+
+                {{$projects->links('pagination::bootstrap-5')}}
+
             </tbody>
         </table>
     </div>

@@ -19,7 +19,7 @@ class ProjectController extends Controller
     public function index()
     {
 
-        $projects = Project::orderByDesc('id')->paginate();
+        $projects = Project::orderBy('id')->paginate();
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -49,6 +49,7 @@ class ProjectController extends Controller
             $val_data['cover_image'] = $image_path;
             //dd($image_path, $val_data);
         }
+        $val_data['slug'] = Str::slug($request->name, '-');
         //dd($val_data);
 
         $proj = Project::create($val_data);
@@ -81,7 +82,7 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //dd($request->all());
+        dd($request->all());
 
 
         $val_data = $request->validated();

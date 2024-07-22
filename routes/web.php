@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Project;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return to_route('login');
+})->name('home');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
