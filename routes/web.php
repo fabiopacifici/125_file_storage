@@ -30,8 +30,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
+/* Route::get('/mailable', function () {
+    $lead = ['name' => 'Fabio', 'email' => 'fabio@example.com', 'message' => 'lorem ipsum dolor'];
+    $lead = App\Models\Lead::first();
 
-
+    //dd($lead);
+    return new App\Mail\NewLeadMarkdownMessage($lead);
+});
+ */
 
 
 

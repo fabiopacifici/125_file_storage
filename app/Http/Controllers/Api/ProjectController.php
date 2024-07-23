@@ -33,6 +33,7 @@ class ProjectController extends Controller
     public function show($slug)
     {
 
+
         //dd($slug);
         $project = Project::with('technologies')->where('slug', $slug)->first();
         //dd($project);
